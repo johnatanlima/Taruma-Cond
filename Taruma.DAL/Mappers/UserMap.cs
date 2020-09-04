@@ -17,7 +17,14 @@ namespace Taruma.DAL.Mappers
             builder.Property(x => x.FirstAccess).IsRequired();
             builder.Property(x => x.Status).IsRequired();
 
+            builder.HasMany(x => x.OwnersApartment).WithOne(x => x.Owner);
+            builder.HasMany(x => x.Residents).WithOne(x => x.Resident);
+            builder.HasMany(x => x.Vehicles).WithOne(x => x.User);
+            builder.HasMany(x => x.Events).WithOne(x => x.User);
+            builder.HasMany(x => x.Payments).WithOne(x => x.User);
+            builder.HasMany(x => x.Services).WithOne(x => x.User);
 
+            builder.ToTable("Users");
 
         }
 

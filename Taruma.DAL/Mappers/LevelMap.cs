@@ -41,6 +41,8 @@ namespace Taruma.DAL.Mappers
                 }
 
                 );
+
+            builder.ToTable("Levels");
         }
 
 
