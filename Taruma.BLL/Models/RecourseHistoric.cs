@@ -10,8 +10,8 @@
 
         public int Day { get; set; }
 
+        //Pertence
         public int MonthId { get; set; }
-
         public virtual Month Month { get; set; }
        
         public int Year { get; set; }

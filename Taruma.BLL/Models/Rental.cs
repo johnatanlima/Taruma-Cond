@@ -13,9 +13,9 @@ namespace Taruma.BLL.Models
         [Range(0, int.MaxValue, ErrorMessage = "Value invalid!")]
         public decimal Value { get; set; }
 
+        //Pertence
         [Display(Name = "Month")]
         public int MonthId { get; set; }
-
         public Month Month { get; set; }
 
         [Required(ErrorMessage = "Warning! Insert value here!")]
