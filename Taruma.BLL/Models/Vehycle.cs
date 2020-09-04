@@ -24,8 +24,8 @@ namespace Taruma.BLL.Models
         [Required(ErrorMessage = "Warning! Insert value here!")]
         public string Plaque { get; set; }
 
+        //Pertence
         public int UserId { get; set; }
-
         public User User { get; set; }
     }
 }

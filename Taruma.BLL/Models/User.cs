@@ -32,7 +32,7 @@ namespace Taruma.BLL.Models
     
     public enum StatusAccount
     {
-        Analisando, Aprovado, Reprovado
+        Analyzing, Approved, Disapproved
     }
 
 }

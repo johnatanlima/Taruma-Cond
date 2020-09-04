@@ -18,7 +18,7 @@ namespace Taruma.BLL.Models
 
         public Month Month { get; set; }
 
-        [StringLength(45, ErrorMessage = "Limit of caracter error!")]
+        [Required(ErrorMessage = "Warning! Insert value here!")]
         [Range(2020, 2030, ErrorMessage = "Value invalid!")]
         public int Year { get; set; }
 
