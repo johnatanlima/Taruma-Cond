@@ -18,11 +18,11 @@ namespace Taruma.BLL.Models
         public string Image { get; set; }
 
         [Display(Name = "Resident ID")]
-        public int ResidentId { get; set; }
+        public string ResidentId { get; set; }
         public virtual User Resident { get; set; }
 
         [Display(Name = "Owner ID")]
-        public int OwnerId { get; set; }
+        public string OwnerId { get; set; }
         public virtual User Owner { get; set; }
 
     }

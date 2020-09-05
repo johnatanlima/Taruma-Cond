@@ -21,64 +21,64 @@ namespace Taruma.DAL.Mappers
 
             builder.HasData(
 
-                new Month
+                new Month()
                 {
                     MonthId = 1,
                     Name = "Janeiro"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 2,
                     Name = "Fevereiro"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 3,
                     Name = "Março"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 4,
                     Name = "Abril"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 5,
                     Name = "Maio"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 6,
                     Name = "Junho"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 7,
                     Name = "Julho"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 8,
                     Name = "Agosto"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 9,
                     Name = "Setembro"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 10,
                     Name = "Outubro"
                 },
-                new Month
+                new Month()
                 {
                     MonthId = 11,
                     Name = "Novembro"
                 },
-                new Month
+                new Month()
                 {
-                    MonthId = 2,
+                    MonthId = 12,
                     Name = "Dezembro"
                 }
                 );

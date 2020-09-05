@@ -15,7 +15,7 @@ namespace Taruma.BLL.Models
         public DateTime Date { get; set; }
 
         [Display(Name = "User ID")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public virtual User User { get; set; }
     }

@@ -25,7 +25,7 @@ namespace Taruma.BLL.Models
         public string Plaque { get; set; }
 
         //Pertence
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
     }
 }
