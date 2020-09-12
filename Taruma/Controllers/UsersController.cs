@@ -55,9 +55,9 @@ namespace Taruma.Controllers
                 }
 
                 User user = new User();
-                IdentityUser userCreated;
+                IdentityResult userCreated;
 
-                if(_userRepository.HasRegister() == 0)
+                if (_userRepository.HasRegister() == 0)
                 {
                     user.UserName = registerVM.Name;
                     user.CPF = registerVM.CPF;
@@ -67,13 +67,51 @@ namespace Taruma.Controllers
                     user.Status = StatusAccount.Approved;
                     user.FirstAccess = false;
 
+                    userCreated = await _userRepository.CreateUser(user, registerVM.Password);
+                        
+                    if (userCreated.Succeeded)
+                    {
+                        await _userRepository.IncludeUserLevel(user, "Administrator");
+                        await _userRepository.UserLogin(user, false);
 
+                        RedirectToAction("Index", "Users");
+                    }
                 }
 
+                user.UserName = registerVM.Name;
+                user.CPF = registerVM.CPF;
+                user.Email = registerVM.Email;
+                user.PhoneNumber = registerVM.Phone;
+                user.Photo = registerVM.Photo;
+                user.Status = StatusAccount.Analyzing;
+                user.FirstAccess = true;
 
-                return View(registerVM);
+                userCreated = await _userRepository.CreateUser(user, registerVM.Password);
+
+                if (userCreated.Succeeded)
+                {
+                    return View("Analyze", user.UserName);
+                }
+                else
+                {
+                    foreach (IdentityError erro in userCreated.Errors)
+                    {
+                        ModelState.AddModelError("", erro.Description);
+                    }
+
+                    return View(registerVM);
+                }
             }
+
+            return View(registerVM);
             
         }
+
+        public IActionResult Analyze(string userNameParam)
+        {
+            return View(userNameParam);
+        }
+
+
     }
 }
