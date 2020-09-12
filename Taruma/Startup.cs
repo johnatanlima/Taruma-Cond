@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using Taruma.DAL;
+using Taruma.DAL.Interfaces;
+using Taruma.DAL.Repositories;
 
 namespace Taruma
 {
@@ -24,6 +26,8 @@ namespace Taruma
             services.AddControllersWithViews();
 
             services.AddDbContext<Context>(options => options.UseMySql(Configuration.GetConnectionString("myConn")));
+
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
