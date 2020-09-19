@@ -9,8 +9,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Analyze</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </environment>
+
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </environment>
+    <title> Analyzing account </title>
+
 </head>
-<body>
+<body class="white-text blue darken-2 container" style="position:absolute; top:40%; left:20%;">
+    <div>
+        <h1> Account in approval... </h1>
+        <h5> Hello, @Model! Your account is under review. Soon, you will be able to access the system. </h5>
+    </div>
+
 </body>
 </html>

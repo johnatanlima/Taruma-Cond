@@ -10,7 +10,7 @@ namespace Taruma.BLL.Models
     {
         public string CPF { get; set; }
 
-        public string Photo { get; set; }
+        public string Photo { get; set; } 
 
         public bool FirstAccess { get; set; }
 

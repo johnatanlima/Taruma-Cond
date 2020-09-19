@@ -11,7 +11,7 @@ namespace Taruma.DAL.Mappers
         {
 
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x => x.CPF).IsRequired().HasMaxLength(11);
+            builder.Property(x => x.CPF).IsRequired().HasMaxLength(20);
             builder.HasIndex(x => x.CPF).IsUnique();
             builder.Property(x => x.Photo).IsRequired();
             builder.Property(x => x.FirstAccess).IsRequired();

@@ -43,14 +43,14 @@ namespace Taruma.Controllers
             {
                 if (photo != null)
                 {
-                    string myPath = Path.Combine(_env.ContentRootPath, "Photos");
+                    string myPath = Path.Combine(_env.ContentRootPath, "wwwroot/Photos");
                     string photoName = Guid.NewGuid().ToString() + photo.FileName;
 
                     using (FileStream fs = new FileStream(Path.Combine(myPath, photoName), FileMode.Create))
                     {
                         await photo.CopyToAsync(fs);
 
-                        registerVM.Photo = "~/Photos" + photoName;
+                        registerVM.Photo = "~/Photos/" + photoName;
                     }
                 }
 
@@ -59,7 +59,11 @@ namespace Taruma.Controllers
 
                 if (_userRepository.HasRegister() == 0)
                 {
+                    //var retiraPonto = registerVM.CPF.Replace(".", "");
+                    //var cpfValido = retiraPonto.Replace("-", "");
+
                     user.UserName = registerVM.Name;
+                    //user.CPF = cpfValido.ToString();
                     user.CPF = registerVM.CPF;
                     user.Email = registerVM.Email;
                     user.PhoneNumber = registerVM.Phone;
@@ -74,7 +78,7 @@ namespace Taruma.Controllers
                         await _userRepository.IncludeUserLevel(user, "Administrator");
                         await _userRepository.UserLogin(user, false);
 
-                        RedirectToAction("Index", "Users");
+                        RedirectToAction("Home", "Index");
                     }
                 }
 

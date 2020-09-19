@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Taruma.DAL;
 
 namespace Taruma.DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200919161333_003")]
+    partial class _003
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -234,24 +236,24 @@ namespace Taruma.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9733dd42-721c-4cda-8771-e0eb2379d0a6",
-                            ConcurrencyStamp = "099d49a3-2fcd-4f61-8d09-42934f75f0b9",
+                            Id = "606998b4-6e5b-4e58-93c0-54a6becf9bef",
+                            ConcurrencyStamp = "e023aecd-8ae8-418f-a114-c8ccd67085f6",
                             Description = "Apartments Resident",
                             Name = "Resident",
                             NormalizedName = "RESIDENT"
                         },
                         new
                         {
-                            Id = "1856e2f2-a111-41a6-bbf5-1fca790e2c54",
-                            ConcurrencyStamp = "74bfa253-206b-4ea5-9cf3-31cc7215ff4e",
+                            Id = "793e1721-7d39-44b0-ac5e-10dcc17a9957",
+                            ConcurrencyStamp = "b46be649-f0f2-495b-ba49-ab3cf57e2d34",
                             Description = "Apartments Sindical",
                             Name = "Sindical",
                             NormalizedName = "SINDICAL"
                         },
                         new
                         {
-                            Id = "719e71d8-2eb1-4b17-be1a-d4be0fd95eeb",
-                            ConcurrencyStamp = "0b112b54-5de7-4296-8a62-a593b2204ab1",
+                            Id = "81ccd030-0e3e-4f1e-83fe-48ce75533281",
+                            ConcurrencyStamp = "3948a77a-8f0a-4c19-8631-5ab1dc3d229b",
                             Description = "Apartments Administrator",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"

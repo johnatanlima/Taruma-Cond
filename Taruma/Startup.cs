@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using Taruma.BLL.Models;
 using Taruma.DAL;
 using Taruma.DAL.Interfaces;
 using Taruma.DAL.Repositories;
@@ -26,6 +27,10 @@ namespace Taruma
             services.AddControllersWithViews();
 
             services.AddDbContext<Context>(options => options.UseMySql(Configuration.GetConnectionString("myConn")));
+            services.AddIdentity<User, Level>().AddEntityFrameworkStores<Context>();
+
+            services.AddAuthentication();
+            services.AddAuthorization();
 
             services.AddTransient<IUserRepository, UserRepository>();
         }
@@ -47,6 +52,7 @@ namespace Taruma
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
