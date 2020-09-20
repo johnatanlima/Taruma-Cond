@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Taruma.DAL.Migrations
 {
-    public partial class _002 : Migration
+    public partial class _005 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,7 @@ namespace Taruma.DAL.Migrations
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(maxLength: 45, nullable: false)
+                    Description = table.Column<string>(type: "varchar(45)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -54,7 +54,7 @@ namespace Taruma.DAL.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    CPF = table.Column<string>(maxLength: 11, nullable: false),
+                    CPF = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false),
                     Photo = table.Column<string>(nullable: false),
                     FirstAccess = table.Column<bool>(nullable: false),
                     Status = table.Column<int>(nullable: false)
@@ -247,7 +247,7 @@ namespace Taruma.DAL.Migrations
                 {
                     EventId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 45, nullable: false),
+                    Name = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     UserId = table.Column<string>(nullable: false)
                 },
@@ -268,10 +268,10 @@ namespace Taruma.DAL.Migrations
                 {
                     ServiceId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 45, nullable: false),
+                    Name = table.Column<string>(type: "varchar(45)", nullable: false),
                     Cust = table.Column<decimal>(nullable: false),
                     Status = table.Column<int>(nullable: false),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -281,7 +281,7 @@ namespace Taruma.DAL.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -290,11 +290,11 @@ namespace Taruma.DAL.Migrations
                 {
                     VehycleId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 45, nullable: false),
-                    Brand = table.Column<string>(maxLength: 45, nullable: false),
-                    Color = table.Column<string>(maxLength: 45, nullable: false),
-                    Plaque = table.Column<string>(maxLength: 10, nullable: false),
-                    UserId = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false),
+                    Brand = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false),
+                    Color = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false),
+                    Plaque = table.Column<string>(type: "varchar(45)", nullable: false),
+                    UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -304,7 +304,7 @@ namespace Taruma.DAL.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -362,9 +362,9 @@ namespace Taruma.DAL.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "75f0cec7-f549-4d14-bc7f-af7c83d7b3dd", "4288e268-ac21-4709-8150-c520490ec38b", "Apartments Resident", "Resident", "RESIDENT" },
-                    { "3168350e-b248-45e2-89ab-42eb74fc6cb9", "c2ea9591-f849-44fd-bfbe-1cffddb9197a", "Apartments Sindical", "Sindical", "SINDICAL" },
-                    { "5bdc07c2-dd43-4518-8add-90d5b2f1edee", "0bcc9ed2-a3a5-4352-aeb9-a21fe66af4cf", "Apartments Administrator", "Administrator", "ADMINISTRATOR" }
+                    { "8db22f8b-e7fe-4f79-a9cb-c7b7f57b2117", "8d5373b4-bfe6-44ae-8ddd-c5616f976150", "Apartments Resident", "Resident", "RESIDENT" },
+                    { "5b8fd660-c28b-444d-b8ff-a890529792c0", "0c489f98-bfd3-4c7a-a5c4-3c6d98d3b022", "Apartments Sindical", "Sindical", "SINDICAL" },
+                    { "8a2aa633-507b-40d1-8d4e-630d9f473176", "caae1fe4-2924-4a11-8ec3-931b0db182eb", "Apartments Administrator", "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(

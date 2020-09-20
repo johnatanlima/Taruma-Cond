@@ -10,7 +10,7 @@ namespace Taruma.DAL.Mappers
         {
 
             builder.HasKey(e => e.EventId);
-            builder.Property(e => e.Name).IsRequired().HasMaxLength(45);
+            builder.Property(e => e.Name).HasColumnType("varchar(45)");
             builder.Property(e => e.Date).IsRequired();
             builder.Property(e => e.UserId).IsRequired();
 

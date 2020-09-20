@@ -11,11 +11,11 @@ namespace Taruma.DAL.Mappers
         {
 
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x => x.CPF).IsRequired().HasMaxLength(20);
+            builder.Property(x => x.CPF).IsRequired().HasMaxLength(30).HasColumnType("varchar(30)");
             builder.HasIndex(x => x.CPF).IsUnique();
             builder.Property(x => x.Photo).IsRequired();
-            builder.Property(x => x.FirstAccess).IsRequired();
-            builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.FirstAccess);
+            builder.Property(x => x.Status);
 
             builder.HasMany(x => x.OwnersApartment).WithOne(x => x.Owner);
             builder.HasMany(x => x.Residents).WithOne(x => x.Resident);
@@ -25,7 +25,6 @@ namespace Taruma.DAL.Mappers
             builder.HasMany(x => x.Services).WithOne(x => x.User);
 
             builder.ToTable("Users");
-
         }
 
 

@@ -13,7 +13,7 @@ namespace Taruma.DAL.Mappers
         public void Configure(EntityTypeBuilder<Level> builder)
         {
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x => x.Description).IsRequired().HasMaxLength(45);
+            builder.Property(x => x.Description).HasColumnType("varchar(45)");
 
             builder.HasData(
                 new Level

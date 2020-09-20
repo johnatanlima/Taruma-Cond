@@ -9,8 +9,8 @@ using Taruma.DAL;
 namespace Taruma.DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200919161333_003")]
-    partial class _003
+    [Migration("20200920141759_005")]
+    partial class _005
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -188,7 +188,7 @@ namespace Taruma.DAL.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(45) CHARACTER SET utf8mb4")
+                        .HasColumnType("varchar(45)")
                         .HasMaxLength(45);
 
                     b.Property<string>("UserId")
@@ -213,9 +213,7 @@ namespace Taruma.DAL.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("varchar(45) CHARACTER SET utf8mb4")
-                        .HasMaxLength(45);
+                        .HasColumnType("varchar(45)");
 
                     b.Property<string>("Name")
                         .HasColumnType("varchar(256) CHARACTER SET utf8mb4")
@@ -236,24 +234,24 @@ namespace Taruma.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "606998b4-6e5b-4e58-93c0-54a6becf9bef",
-                            ConcurrencyStamp = "e023aecd-8ae8-418f-a114-c8ccd67085f6",
+                            Id = "8db22f8b-e7fe-4f79-a9cb-c7b7f57b2117",
+                            ConcurrencyStamp = "8d5373b4-bfe6-44ae-8ddd-c5616f976150",
                             Description = "Apartments Resident",
                             Name = "Resident",
                             NormalizedName = "RESIDENT"
                         },
                         new
                         {
-                            Id = "793e1721-7d39-44b0-ac5e-10dcc17a9957",
-                            ConcurrencyStamp = "b46be649-f0f2-495b-ba49-ab3cf57e2d34",
+                            Id = "5b8fd660-c28b-444d-b8ff-a890529792c0",
+                            ConcurrencyStamp = "0c489f98-bfd3-4c7a-a5c4-3c6d98d3b022",
                             Description = "Apartments Sindical",
                             Name = "Sindical",
                             NormalizedName = "SINDICAL"
                         },
                         new
                         {
-                            Id = "81ccd030-0e3e-4f1e-83fe-48ce75533281",
-                            ConcurrencyStamp = "3948a77a-8f0a-4c19-8631-5ab1dc3d229b",
+                            Id = "8a2aa633-507b-40d1-8d4e-630d9f473176",
+                            ConcurrencyStamp = "caae1fe4-2924-4a11-8ec3-931b0db182eb",
                             Description = "Apartments Administrator",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
@@ -431,14 +429,12 @@ namespace Taruma.DAL.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(45) CHARACTER SET utf8mb4")
-                        .HasMaxLength(45);
+                        .HasColumnType("varchar(45)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("ServiceId");
@@ -459,8 +455,8 @@ namespace Taruma.DAL.Migrations
 
                     b.Property<string>("CPF")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasColumnType("varchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -539,26 +535,24 @@ namespace Taruma.DAL.Migrations
 
                     b.Property<string>("Brand")
                         .IsRequired()
-                        .HasColumnType("varchar(45) CHARACTER SET utf8mb4")
+                        .HasColumnType("varchar(45)")
                         .HasMaxLength(45);
 
                     b.Property<string>("Color")
                         .IsRequired()
-                        .HasColumnType("varchar(45) CHARACTER SET utf8mb4")
+                        .HasColumnType("varchar(45)")
                         .HasMaxLength(45);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(45) CHARACTER SET utf8mb4")
+                        .HasColumnType("varchar(45)")
                         .HasMaxLength(45);
 
                     b.Property<string>("Plaque")
                         .IsRequired()
-                        .HasColumnType("varchar(10) CHARACTER SET utf8mb4")
-                        .HasMaxLength(10);
+                        .HasColumnType("varchar(45)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("VehycleId");
@@ -689,18 +683,14 @@ namespace Taruma.DAL.Migrations
                 {
                     b.HasOne("Taruma.BLL.Models.User", "User")
                         .WithMany("Services")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Taruma.BLL.Models.Vehycle", b =>
                 {
                     b.HasOne("Taruma.BLL.Models.User", "User")
                         .WithMany("Vehicles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }
