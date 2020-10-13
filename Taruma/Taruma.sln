@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taruma", "Taruma.csproj", "{5EC15954-362D-410F-B1ED-5F02311C080D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taruma.BLL", "..\Taruma.BLL\Taruma.BLL.csproj", "{D6474F40-C3D3-47FC-8FF5-96E9E84C6BB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taruma.BLL", "..\Taruma.BLL\Taruma.BLL.csproj", "{D6474F40-C3D3-47FC-8FF5-96E9E84C6BB5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taruma.DAL", "..\Taruma.DAL\Taruma.DAL.csproj", "{9ECD58ED-919D-4A3B-9A89-CFB9F46F15CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taruma.DAL", "..\Taruma.DAL\Taruma.DAL.csproj", "{9ECD58ED-919D-4A3B-9A89-CFB9F46F15CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5EC15954-362D-410F-B1ED-5F02311C080D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EC15954-362D-410F-B1ED-5F02311C080D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EC15954-362D-410F-B1ED-5F02311C080D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EC15954-362D-410F-B1ED-5F02311C080D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6474F40-C3D3-47FC-8FF5-96E9E84C6BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6474F40-C3D3-47FC-8FF5-96E9E84C6BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6474F40-C3D3-47FC-8FF5-96E9E84C6BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU

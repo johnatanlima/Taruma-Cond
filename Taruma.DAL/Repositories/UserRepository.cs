@@ -26,7 +26,7 @@ namespace Taruma.DAL.Repositories
         {
             try
             {
-                return await _userManag.CreateAsync(user, pass);
+                return await _userManag.CreateAsync(user, pass); 
             }
             catch (Exception ex)
             {

@@ -32,7 +32,10 @@ namespace Taruma
             services.AddAuthentication();
             services.AddAuthorization();
 
-            services.AddTransient<IUserRepository, UserRepository>();
+            services.ToConfigRepositories();
+            services.ToConfigUserIdentity();
+            services.ToConfigPassUser();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
