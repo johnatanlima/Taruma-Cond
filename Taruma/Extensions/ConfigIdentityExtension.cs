@@ -2,6 +2,7 @@
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjections;
 
 namespace Taruma.Extensions
 {

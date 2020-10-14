@@ -32,6 +32,7 @@ namespace Taruma
             services.AddAuthentication();
             services.AddAuthorization();
 
+            services.ToConfigCookies();
             services.ToConfigRepositories();
             services.ToConfigUserIdentity();
             services.ToConfigPassUser();
